@@ -1,0 +1,36 @@
+{
+  "courses": [
+    {
+      "title": "Vue.Js - S4 - Initiation",
+      "level": "BUT 2 MMI",
+      "description": "Cours d'initiation et de découverte de Vue.Js",
+      "diplome": "BUT MMI",
+      "semestre": 4,
+      "url": "https://cours.davidannebicque.fr/vue.js-but"
+    },
+    {
+      "title": "Vue.Js - S5 - Avancé",
+      "level": "BUT 3 MMI",
+      "description": "Cours avancé sur Vue.Js",
+      "diplome": "BUT MMI",
+      "semestre": 5,
+      "url": "https://cours.davidannebicque.fr/vue.js-but"
+    },
+    {
+      "title": "Symfony - S3 - Initiation",
+      "level": "BUT 2 MMI",
+      "description": "Cours d'initiation et de découverte de Symfony",
+      "diplome": "BUT MMI",
+      "semestre": 3,
+      "url": "https://cours.davidannebicque.fr/symfony-but"
+    },
+    {
+      "title": "Symfony - S4 - Avancé",
+      "level": "BUT 2 MMI",
+      "description": "Cours avancé sur Symfony",
+      "diplome": "BUT MMI",
+      "semestre": 4,
+      "url": "https://cours.davidannebicque.fr/symfony-but"
+    }
+  ]
+}

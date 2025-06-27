@@ -1,0 +1,41 @@
+{
+  "categories": [
+    {
+      "nom": "Développement",
+      "competences": [
+        "PHP / Symfony",
+        "JavaScript / Vue.js / Nuxt.js",
+        "HTML5 / CSS3 / TailwindCSS",
+        "Base de données (MySQL, PostgreSQL)",
+        "Git / GitHub",
+        "Docker",
+        "API REST",
+        "Tests unitaires et fonctionnels"
+      ]
+    },
+    {
+      "nom": "Enseignement",
+      "competences": [
+        "Programmation Web",
+        "Architecture logicielle",
+        "Gestion de projet",
+        "Méthodologies agiles",
+        "Analyse et conception",
+        "Base de données",
+        "Accompagnement pédagogique",
+        "Innovation pédagogique"
+      ]
+    },
+    {
+      "nom": "Gestion de projet",
+      "competences": [
+        "Direction d'équipe",
+        "Coordination pédagogique",
+        "Gestion de l'alternance",
+        "Suivi des stages",
+        "Organisation d'événements",
+        "Relation entreprises"
+      ]
+    }
+  ]
+}

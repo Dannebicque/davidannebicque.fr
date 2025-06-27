@@ -1,0 +1,40 @@
+{
+  "formations": [
+    {
+      "annee": "2010",
+      "titre": "Doctorat en Automatique et informatique industrielle",
+      "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
+      "description": "Thèse sur l'analyse des traces d'apprentissage dans les environnements numériques"
+    },
+    {
+      "annee": "2006",
+      "titre": "DEA en Automatique",
+      "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
+      "description": "Spécialisation en développement web et systèmes d'information"
+    },
+    {
+      "annee": "2005",
+      "titre": "Ingénieur Maître en GEII",
+      "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
+      "description": "Formation générale en informatique"
+    },
+    {
+      "annee": "2004",
+      "titre": "Licence en GEII",
+      "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
+      "description": "Formation générale en informatique"
+    },
+    {
+      "annee": "2003",
+      "titre": "DEUG GEII et DUT GEII",
+      "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
+      "description": "Formation générale en informatique"
+    },
+    {
+      "annee": "2001",
+      "titre": "Bac S",
+      "etablissement": "Lycée Georges Bustin, Vieux Condé",
+      "description": "Formation générale en informatique"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Dannebicque",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/davidannebicque/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "ResearchGate",
+      "url": "https://www.researchgate.net/profile/David-Annebicque",
+      "icon": "researchgate"
+    }
+  ]
+}

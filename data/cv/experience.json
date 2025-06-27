@@ -1,0 +1,41 @@
+{
+  "experiences": [
+    {
+      "periode": "2011 - Présent",
+      "poste": "Maître de conférences",
+      "etablissement": "IUT de Troyes - Université de Reims Champagne-Ardenne",
+      "responsabilites": [
+        {
+          "titre": "Directeur Adjoint | IUT de Troyes",
+          "periode": "2021 - Présent"
+        },
+         {
+          "titre": "Secrétaire CPN MMI",
+          "periode": "2022 - Présent"
+        },
+        {
+          "titre": "PACD MMI",
+          "periode": "2018 - 2022"
+        },
+        {
+          "titre": "Chef de département BUT MMI  | IUT de Troyes",
+          "periode": "2015 - 2021"
+        },
+        {
+          "titre": "Directeur des études BUT MMI  | IUT de Troyes",
+          "periode": "2012 - 2015"
+        }
+      ]
+    },
+    {
+      "periode": "2010 - 2011",
+      "poste": "Post-Doc",
+      "etablissement": "Université de Reims Champagne-Ardenne"
+    },
+    {
+      "periode": "2006 - 2010",
+      "poste": "Ingénieur d'étude - Doctorant",
+      "etablissement": "Université de Valenciennes et du Hainaut Cambrésis, LAMIH"
+    }
+  ]
+}
