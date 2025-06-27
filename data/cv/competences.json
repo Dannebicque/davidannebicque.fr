@@ -4,22 +4,22 @@
       "nom": "Développement",
       "competences": [
         "PHP / Symfony",
+        "Python",
         "JavaScript / Vue.js / Nuxt.js",
         "HTML5 / CSS3 / TailwindCSS",
         "Base de données (MySQL, PostgreSQL)",
         "Git / GitHub",
         "Docker",
-        "API REST",
-        "Tests unitaires et fonctionnels"
+        "API REST (Api Platform, fastapi)",
+        "Tests unitaires et fonctionnels (PHPUnit, Jest, Cypress)"
       ]
     },
     {
       "nom": "Enseignement",
       "competences": [
-        "Programmation Web",
+        "Développement Web",
+        "Accessibilité numérique",
         "Architecture logicielle",
-        "Gestion de projet",
-        "Méthodologies agiles",
         "Analyse et conception",
         "Base de données",
         "Accompagnement pédagogique",
@@ -32,7 +32,6 @@
         "Direction d'équipe",
         "Coordination pédagogique",
         "Gestion de l'alternance",
-        "Suivi des stages",
         "Organisation d'événements",
         "Relation entreprises"
       ]
