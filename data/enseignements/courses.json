@@ -17,6 +17,14 @@
       "url": "https://cours.davidannebicque.fr/vue.js-but"
     },
     {
+      "title": "Programmation Orientée Objet - S3 - Initiation",
+      "level": "BUT 2 MMI",
+      "description": "Cours d'initiation et de découverte de la programmation orientée objet",
+      "diplome": "BUT MMI",
+      "semestre": 3,
+      "url": "https://cours.davidannebicque.fr/programmation-orientee-objet-but"
+    },
+    {
       "title": "Symfony - S3 - Initiation",
       "level": "BUT 2 MMI",
       "description": "Cours d'initiation et de découverte de Symfony",

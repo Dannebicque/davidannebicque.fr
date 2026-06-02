@@ -45,9 +45,9 @@ const projects = ref<Project[]>([
     url: 'https://github.com/Dannebicque/intranetV3'
   },
   {
-    title: 'TableauxDeBord',
-    description: 'Outil d\'analyse et de visualisation des données pédagogiques. Développé avec Symfony et ChartJS, il permet de suivre la progression des étudiants et d\'identifier les points d\'amélioration.',
-    url: 'https://github.com/Dannebicque/TableauxDeBord'
+    title: 'ORéOF',
+    description: 'Application de gestion des offres de formation pour les établissements d\'enseignement supérieur. Permet la création, la modification et la publication des offres de formation en ligne.',
+    url: 'https://github.com/OReOF-URCA/oreof'
   },
   {
     title: 'redigeTonBut',
@@ -55,9 +55,19 @@ const projects = ref<Project[]>([
     url: 'https://github.com/Dannebicque/redigeTonBut'
   },
   {
-    title: 'OrdonanceurLp',
-    description: 'Application de gestion des plannings et des emplois du temps pour les formations en alternance. Optimisation des périodes entreprise/formation.',
-    url: 'https://github.com/Dannebicque/ordonanceurLp'
+    title: 'WWC - World Wide Company',
+    description: 'Jeu de gestion d\'entreprise en ligne, développé pour les étudiants en BUT. Permet de simuler la gestion d\'une entreprise, avec des aspects financiers, marketing et opérationnels.',
+    url: 'https://github.com/Dannebicque/wwc'
+  },
+    {
+    title: 'HtmlToSpreadsheet',
+    description: 'Outil de conversion de données HTML/Twig vers des feuilles de calcul. Bundle Symfony pour faciliter l\'export de données structurées vers Excel.',
+    url: 'https://github.com/Dannebicque/htmlToSpreadsheet'
+  },
+    {
+    title: 'UniEdt',
+    description: 'Application de gestion des emplois du temps pour les établissements d\'enseignement supérieur, avec gestion des contraintes et du service prévisionnel.',
+    url: 'https://github.com/Dannebicque/uniEdt'
   }
 ])
 
