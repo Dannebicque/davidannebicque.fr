@@ -1,8 +1,18 @@
 {
   "links": [
     {
-      "name": "GitHub",
+      "name": "GitHub Perso",
       "url": "https://github.com/Dannebicque",
+      "icon": "github"
+    },
+    {
+      "name": "GitHub ORéOF / URCA",
+      "url": "https://github.com/oreof-urca",
+      "icon": "github"
+    },
+    {
+      "name": "GitHub IUT Troyes",
+      "url": "https://github.com/IUTTroyes",
       "icon": "github"
     },
     {

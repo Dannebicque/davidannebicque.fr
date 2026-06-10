@@ -4,7 +4,7 @@
       "annee": "2010",
       "titre": "Doctorat en Automatique et informatique industrielle",
       "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
-      "description": "Thèse sur l'analyse des traces d'apprentissage dans les environnements numériques"
+      "description": "Sujet de thèse : 'Apport de l’aide à la décision à la coopération Homme-Machine : Application au contrôle du trafic aérien'"
     },
     {
       "annee": "2006",
@@ -16,25 +16,26 @@
       "annee": "2005",
       "titre": "Ingénieur Maître en GEII",
       "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
-      "description": "Formation générale en informatique"
+      "description": "IUP GEII, Institut Universitaire Professionnalisé"
     },
+  
     {
       "annee": "2004",
       "titre": "Licence en GEII",
       "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
-      "description": "Formation générale en informatique"
+      "description": "IUP GEII, Institut Universitaire Professionnalisé"
     },
     {
       "annee": "2003",
       "titre": "DEUG GEII et DUT GEII",
       "etablissement": "Université de Valenciennes et du Hainaut-Cambrésis",
-      "description": "Formation générale en informatique"
+      "description": "IUP GEII, Institut Universitaire Professionnalisé"
     },
     {
       "annee": "2001",
       "titre": "Bac S",
       "etablissement": "Lycée Georges Bustin, Vieux Condé",
-      "description": "Formation générale en informatique"
+      "description": "Formation scientifique avec spécialité en mathématiques et Science de l'Ingénieur"
     }
   ]
 }

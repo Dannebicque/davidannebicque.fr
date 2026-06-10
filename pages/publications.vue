@@ -1,49 +1,110 @@
 <template>
-  <div class="bg-white rounded-2xl shadow-lg p-8">
-    <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-8">Publications</h1>
-    
-    <div v-if="loading" class="flex justify-center items-center py-12">
-      <div class="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600"></div>
-    </div>
-    
-    <div v-else class="space-y-6">
-      <div v-for="pub in publications" 
-           :key="pub.docid" 
-           class="bg-blue-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-        <div class="flex items-start justify-between">
-          <h3 class="text-xl font-semibold text-blue-900 flex-grow">{{ pub.title }}</h3>
-          <span :class="getTypeBadgeClasses(pub.docType)" class="ml-4 px-3 py-1 text-sm rounded-full whitespace-nowrap">
-            {{ pub.type }}
-          </span>
+  <div class="space-y-10">
+    <section class="relative overflow-hidden rounded-lg bg-blue-950 text-white shadow-2xl shadow-blue-950/20">
+      <div class="absolute inset-0 bg-[linear-gradient(135deg,_rgba(15,23,42,0.98),_rgba(30,64,175,0.9)_55%,_rgba(13,148,136,0.65))]"></div>
+      <div class="relative grid gap-8 px-6 py-10 sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:py-14">
+        <div>
+          <p class="text-sm font-semibold uppercase text-cyan-200">Publications</p>
+          <h1 class="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
+            Travaux de recherche et productions scientifiques.
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-blue-100">
+            Mes publications s'inscrivent principalement autour des learning analytics, des environnements numériques d'apprentissage et de l'analyse des usages dans l'enseignement supérieur.
+          </p>
         </div>
-        <p class="text-blue-700 mt-2 font-medium">
-          <span v-for="(author, index) in pub.authors" :key="index">
-            <span v-if="author.toLowerCase().includes('annebicque')" class="font-bold text-blue-800 border-b-2 border-blue-400">
-              {{ author }}
-            </span>
-            <span v-else>{{ author }}</span>
-            <span v-if="index < pub.authors.length - 1">, </span>
-          </span>
-        </p>
-        <p class="text-blue-600 mt-1">
-          {{ pub.venue }}
-          <span v-if="pub.year">, {{ pub.year }}</span>
-        </p>
-        <a :href="pub.url" 
-           target="_blank" 
-           class="inline-flex items-center mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-          Voir la publication
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-          </svg>
+
+        <aside class="rounded-lg border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
+          <p class="font-semibold">Source HAL</p>
+          <p class="mt-3 text-sm leading-6 text-blue-100">
+            Les références sont chargées depuis l'archive ouverte HAL et triées par date de publication décroissante.
+          </p>
+          <dl class="mt-5 grid grid-cols-2 gap-3">
+            <div class="rounded-lg bg-white/10 p-4">
+              <dt class="text-sm text-blue-100">Références</dt>
+              <dd class="mt-2 text-2xl font-bold">{{ publications.length }}</dd>
+            </div>
+            <div class="rounded-lg bg-white/10 p-4">
+              <dt class="text-sm text-blue-100">Auteur</dt>
+              <dd class="mt-2 text-2xl font-bold">HAL</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="rounded-lg border border-blue-100 bg-white p-7 shadow-xl shadow-blue-900/5">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase text-cyan-600">Bibliographie</p>
+          <h2 class="mt-2 text-3xl font-bold text-blue-950">Sélection chronologique</h2>
+        </div>
+        <a
+          href="https://hal.science/search/index/q/*/authIdHal_s/david-annebicque"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-950"
+        >
+          Profil HAL
+          <ArrowTopRightOnSquareIcon class="ml-2 h-4 w-4" />
         </a>
       </div>
-    </div>
+
+      <div v-if="loading" class="flex items-center justify-center py-16">
+        <div class="h-12 w-12 animate-spin rounded-full border-4 border-blue-100 border-t-cyan-500"></div>
+      </div>
+
+      <div v-else-if="publications.length === 0" class="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-6 text-slate-600">
+        Aucune publication n'a pu être chargée pour le moment.
+      </div>
+
+      <div v-else class="mt-8 space-y-5">
+        <article
+          v-for="pub in publications"
+          :key="pub.docid"
+          class="group rounded-lg border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-lg"
+        >
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <h3 class="text-xl font-bold text-blue-950">{{ pub.title }}</h3>
+            <span :class="getTypeBadgeClasses(pub.docType)">
+              {{ pub.type }}
+            </span>
+          </div>
+
+          <p class="mt-4 leading-7 text-slate-700">
+            <span v-for="(author, index) in pub.authors" :key="`${pub.docid}-${author}-${index}`">
+              <span v-if="author.toLowerCase().includes('annebicque')" class="font-bold text-blue-950">
+                {{ author }}
+              </span>
+              <span v-else>{{ author }}</span>
+              <span v-if="index < pub.authors.length - 1">, </span>
+            </span>
+          </p>
+
+          <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-sm font-medium text-slate-500">
+              {{ pub.venue }}
+              <span v-if="pub.year"> · {{ pub.year }}</span>
+            </p>
+            <a
+              :href="pub.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm font-semibold text-blue-700 transition hover:text-blue-950"
+            >
+              Voir la publication
+              <ArrowTopRightOnSquareIcon class="ml-2 h-4 w-4 transition group-hover:translate-x-0.5" />
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
+
 interface Publication {
   docid: string
   title: string
@@ -85,33 +146,33 @@ const getVenue = (pub: any): string => {
 
 const getDocType = (type: string): string => {
   const types: Record<string, string> = {
-    'ART': 'Article scientifique',
-    'COMM': 'Communication',
-    'POSTER': 'Poster',
-    'THESE': 'Thèse',
-    'HDR': 'HDR',
-    'COUV': 'Chapitre d\'ouvrage',
-    'OUV': 'Ouvrage',
-    'PROCEEDINGS': 'Actes de conférence',
-    'UNDEFINED': 'Publication',
-    'OTHER': 'Autre publication'
+    ART: 'Article scientifique',
+    COMM: 'Communication',
+    POSTER: 'Poster',
+    THESE: 'Thèse',
+    HDR: 'HDR',
+    COUV: "Chapitre d'ouvrage",
+    OUV: 'Ouvrage',
+    PROCEEDINGS: 'Actes de conférence',
+    UNDEFINED: 'Publication',
+    OTHER: 'Autre publication'
   }
   return types[type] || 'Publication'
 }
 
 const getTypeBadgeClasses = (docType: string): string => {
-  const baseClasses = 'inline-block px-3 py-1 text-sm rounded-full'
+  const baseClasses = 'inline-flex w-fit shrink-0 rounded-full px-3 py-1 text-sm font-semibold'
   const typeClasses: Record<string, string> = {
-    'ART': 'bg-green-100 text-green-800',
-    'COMM': 'bg-blue-100 text-blue-800',
-    'POSTER': 'bg-purple-100 text-purple-800',
-    'THESE': 'bg-red-100 text-red-800',
-    'HDR': 'bg-yellow-100 text-yellow-800',
-    'COUV': 'bg-indigo-100 text-indigo-800',
-    'OUV': 'bg-pink-100 text-pink-800',
-    'PROCEEDINGS': 'bg-orange-100 text-orange-800'
+    ART: 'bg-emerald-100 text-emerald-800',
+    COMM: 'bg-blue-100 text-blue-800',
+    POSTER: 'bg-purple-100 text-purple-800',
+    THESE: 'bg-red-100 text-red-800',
+    HDR: 'bg-yellow-100 text-yellow-800',
+    COUV: 'bg-indigo-100 text-indigo-800',
+    OUV: 'bg-pink-100 text-pink-800',
+    PROCEEDINGS: 'bg-orange-100 text-orange-800'
   }
-  return `${baseClasses} ${typeClasses[docType] || 'bg-gray-100 text-gray-800'}`
+  return `${baseClasses} ${typeClasses[docType] || 'bg-slate-100 text-slate-700'}`
 }
 
 onMounted(async () => {
@@ -129,14 +190,28 @@ onMounted(async () => {
         type: getDocType(pub.docType_s || 'UNDEFINED'),
         docType: pub.docType_s || 'UNDEFINED'
       }))
-      console.log('Publications brutes:', data.response.docs)
-      console.log('Publications transformées:', publications.value)
     }
   } catch (error) {
     console.error('Erreur lors du chargement des publications:', error)
   } finally {
     loading.value = false
   }
+})
+
+useSeoMeta({
+  title: 'Publications',
+  description: "Publications scientifiques de David Annebicque autour des learning analytics, environnements numériques d'apprentissage, pédagogie et analyse des usages.",
+  ogTitle: 'Publications · David Annebicque',
+  ogDescription: "Travaux de recherche, publications HAL et productions scientifiques de David Annebicque.",
+  ogUrl: 'https://davidannebicque.fr/publications',
+  twitterTitle: 'Publications · David Annebicque',
+  twitterDescription: "Publications scientifiques autour des learning analytics et des environnements numériques d'apprentissage."
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://davidannebicque.fr/publications' }
+  ]
 })
 
 definePageMeta({
