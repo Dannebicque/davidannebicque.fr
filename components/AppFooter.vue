@@ -31,7 +31,12 @@
     </div>
     <div class="border-t border-line">
       <p class="container-page py-5 text-sm text-muted">
-        © {{ new Date().getFullYear() }} {{ site.name }}. Code du site sous licence ouverte, voir le dépôt GitHub.
+        © {{ new Date().getFullYear() }} {{ site.name }}.
+        <NuxtLink to="/mentions-legales" class="underline underline-offset-4 hover:text-fg">Mentions légales</NuxtLink>
+        ·
+        <NuxtLink to="/accessibilite" class="underline underline-offset-4 hover:text-fg">Accessibilité</NuxtLink>
+        ·
+        <ExtLink :href="`${site.github}/davidannebicque.fr`" class="underline underline-offset-4 hover:text-fg">Code du site</ExtLink>
       </p>
     </div>
   </footer>

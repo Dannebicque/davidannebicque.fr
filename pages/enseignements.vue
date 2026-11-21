@@ -134,15 +134,3 @@ usePageSeo({
   path: '/enseignements'
 })
 </script>
-
-<style scoped>
-.chip {
-  @apply inline-flex min-h-[44px] cursor-pointer items-center rounded-full border border-line bg-bg px-4 text-[0.95rem] font-semibold text-fg transition hover:border-fg;
-}
-.chip-label input:checked + .chip {
-  @apply border-surface bg-surface text-on;
-}
-.chip-label input:focus-visible + .chip {
-  @apply outline outline-[3px] outline-offset-4 outline-accent;
-}
-</style>

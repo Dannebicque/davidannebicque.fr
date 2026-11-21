@@ -2,48 +2,225 @@
   "projects": [
     {
       "title": "INTRANET",
+      "kind": "Applications",
       "category": "Gestion pédagogique",
-      "description": "Suivi pédagogique des départements d'IUT : étudiants, notes, absences et accompagnement. Centralise les données et simplifie le quotidien des équipes.",
-      "stack": ["Symfony", "Vue.js", "API"],
-      "url": "https://github.com/Dannebicque/intranetV3",
-      "featured": true
+      "featured": true,
+      "description": "Suivi pédagogique des départements d'IUT : étudiants, notes, absences, conventions et accompagnement. Centralise les données et simplifie le quotidien des équipes.",
+      "stack": [
+        "Symfony",
+        "Vue.js",
+        "API"
+      ],
+      "url": "https://github.com/Dannebicque/intranetV3"
     },
     {
       "title": "ORéOF",
+      "kind": "Applications",
       "category": "Offres de formation",
+      "featured": true,
       "description": "Création, validation et publication des offres de formation de l'enseignement supérieur, avec traçabilité des étapes.",
-      "stack": ["Workflow", "Données", "Interface admin"],
-      "url": "https://github.com/OReOF-URCA/oreof",
-      "featured": true
-    },
-    {
-      "title": "WWC · World Wide Company",
-      "category": "Jeu sérieux",
-      "description": "Jeu de gestion d'entreprise en ligne : les étudiants prennent des décisions économiques, marketing et opérationnelles.",
-      "stack": ["Simulation", "Pédagogie", "Données"],
-      "url": "https://github.com/Dannebicque/wwc",
-      "featured": true
+      "stack": [
+        "Symfony",
+        "Workflow",
+        "Interface admin"
+      ],
+      "url": "https://github.com/OReOF-URCA/oreof"
     },
     {
       "title": "redigeTonBut",
+      "kind": "Applications",
       "category": "Collaboration pédagogique",
-      "description": "Plateforme collaborative pour accompagner la rédaction des programmes nationaux du BUT.",
-      "stack": ["Collaboration", "BUT", "Web app"],
-      "url": "https://github.com/Dannebicque/redigeTonBut"
-    },
-    {
-      "title": "HtmlToSpreadsheet",
-      "category": "Bundle Symfony",
-      "description": "Conversion de vues HTML/Twig en feuilles de calcul, pour produire des exports de données structurées rapidement.",
-      "stack": ["Symfony", "Twig", "Excel"],
-      "url": "https://github.com/Dannebicque/htmlToSpreadsheet"
+      "description": "Application de rédaction des référentiels de compétences et des programmes nationaux des 24 spécialités du BUT.",
+      "stack": [
+        "Symfony",
+        "Collaboration",
+        "BUT"
+      ],
+      "url": "https://github.com/Dannebicque/redigeTonBut",
+      "site": "https://orebut.iut.fr",
+      "siteLabel": "Voir le site",
+      "featured": false
     },
     {
       "title": "UniEdt",
+      "kind": "Applications",
       "category": "Planification",
-      "description": "Gestion des emplois du temps d'un établissement : contraintes, services et organisation prévisionnelle.",
-      "stack": ["Planification", "Contraintes", "Web app"],
-      "url": "https://github.com/Dannebicque/uniEdt"
+      "description": "Construction des emplois du temps : disponibilités et contraintes des enseignants, services, semaines et semestres.",
+      "stack": [
+        "Vue.js",
+        "API",
+        "Contraintes"
+      ],
+      "url": "https://github.com/Dannebicque/UniEdt",
+      "featured": false
+    },
+    {
+      "title": "Oscar",
+      "kind": "Applications",
+      "category": "Organisation professionnelle",
+      "status": "En développement",
+      "description": "Assistant d'organisation (mail, agenda, tâches) centré sur le suivi des conversations. Tests d'accessibilité automatisés sur chaque écran.",
+      "stack": [
+        "Vue 3",
+        "Symfony",
+        "API Platform",
+        "PostgreSQL"
+      ],
+      "url": "https://github.com/Dannebicque/oscar",
+      "featured": false
+    },
+    {
+      "title": "Dashboard domotique",
+      "kind": "Applications",
+      "category": "Maison connectée",
+      "description": "Interface tablette pour consulter et piloter la maison connectée (Hue, TaHoma, Netatmo, Spotify), prévue pour tourner sur un Raspberry Pi.",
+      "stack": [
+        "Vue 3",
+        "Symfony",
+        "Docker",
+        "PWA"
+      ],
+      "url": "https://github.com/Dannebicque/dashboardDomotique",
+      "featured": false
+    },
+    {
+      "title": "SFC Editor",
+      "kind": "Outils & bibliothèques",
+      "category": "Automatique · Éditeur GRAFCET",
+      "featured": true,
+      "status": "Prototype",
+      "description": "Éditeur et validateur de GRAFCET (IEC 60848) pour le web, local-first : construction guidée, simulation à jetons, import/export SFCEdit et PLCopen, utilisable au clavier et au lecteur d'écran.",
+      "stack": [
+        "Vue",
+        "TypeScript",
+        "PWA",
+        "MPL 2.0"
+      ],
+      "url": "https://github.com/Dannebicque/sfc-editor"
+    },
+    {
+      "title": "SCADA Studio",
+      "kind": "Outils & bibliothèques",
+      "category": "Industrie 4.0",
+      "status": "En cadrage",
+      "description": "Studio web modulaire de supervision industrielle : tableaux de bord temps réel, synoptiques SVG et connecteurs MQTT puis OPC UA.",
+      "stack": [
+        "PHP",
+        "MQTT",
+        "SVG",
+        "PostgreSQL"
+      ],
+      "url": "https://github.com/Dannebicque/scada-studio",
+      "featured": false
+    },
+    {
+      "title": "HtmlToSpreadsheetBundle",
+      "kind": "Outils & bibliothèques",
+      "category": "Bundle Symfony",
+      "description": "Convertit des tableaux HTML annotés en Excel, ODS ou CSV, avec Twig comme langage de description : exports de données en quelques lignes.",
+      "stack": [
+        "Symfony",
+        "Twig",
+        "PhpSpreadsheet"
+      ],
+      "url": "https://github.com/Dannebicque/HtmlToSpreadsheetBundle",
+      "site": "https://packagist.org/packages/davidannebicque/html-to-spreadsheet-bundle",
+      "siteLabel": "Voir sur Packagist",
+      "featured": false
+    },
+    {
+      "title": "TwigToWordBundle",
+      "kind": "Outils & bibliothèques",
+      "category": "Bundle Symfony",
+      "status": "En cours",
+      "description": "Produit des documents Word modifiables à partir de templates Twig, avec PHPWord.",
+      "stack": [
+        "Symfony",
+        "Twig",
+        "PHPWord"
+      ],
+      "url": "https://github.com/Dannebicque/TwigToWordBundle",
+      "featured": false
+    },
+    {
+      "title": "symfony-app",
+      "kind": "Outils & bibliothèques",
+      "category": "Image Docker",
+      "description": "Image Docker pour le développement local et la CI légère de projets Symfony : PHP 8.5, Apache, Composer, Symfony CLI et Node.js.",
+      "stack": [
+        "Docker",
+        "PHP",
+        "Apache"
+      ],
+      "url": "https://github.com/Dannebicque/symfony-app-docker",
+      "featured": false
+    },
+    {
+      "title": "CReSTIC",
+      "kind": "Sites",
+      "category": "Laboratoire de recherche",
+      "description": "Site du laboratoire de recherche en sciences et technologies de l'information et de la communication de l'URCA : 60 enseignants-chercheurs, cinq équipes, portail de publications.",
+      "stack": [
+        "PHP",
+        "Twig",
+        "SCSS"
+      ],
+      "url": "https://github.com/Dannebicque/crestic-site-web",
+      "site": "https://crestic.univ-reims.fr/",
+      "siteLabel": "Voir le site",
+      "featured": false
+    },
+    {
+      "title": "Site BUT MMI Troyes",
+      "kind": "Sites",
+      "category": "Site vitrine",
+      "description": "Site vitrine du BUT Métiers du Multimédia et de l'Internet de l'IUT de Troyes, généré en statique avec Hugo, lien d'évitement et CSS minifié.",
+      "stack": [
+        "Hugo",
+        "HTML",
+        "CSS"
+      ],
+      "url": "https://github.com/Dannebicque/site-mmi",
+      "featured": false
+    },
+    {
+      "title": "Référentiels BUT",
+      "kind": "Sites",
+      "category": "Site de référence",
+      "description": "Site présentant les référentiels de compétences des 24 spécialités du Bachelor universitaire de technologie.",
+      "stack": [
+        "Nuxt",
+        "Vue"
+      ],
+      "url": "https://github.com/Dannebicque/referentiel-but",
+      "featured": false
+    },
+    {
+      "title": "WWC · World Wide Company",
+      "kind": "Jeux & prototypes",
+      "category": "Jeu sérieux",
+      "description": "Jeu de gestion d'entreprise en ligne : les étudiants prennent des décisions économiques, marketing et opérationnelles.",
+      "stack": [
+        "Simulation",
+        "Pédagogie",
+        "Données"
+      ],
+      "url": "https://github.com/Dannebicque/wwc",
+      "featured": false
+    },
+    {
+      "title": "Market Tycoon",
+      "kind": "Jeux & prototypes",
+      "category": "Jeu de gestion",
+      "status": "Prototype",
+      "description": "Jeu de gestion de magasin en vue isométrique : construction, fournisseurs, stocks, prix, employés et finances.",
+      "stack": [
+        "Vue 3",
+        "TypeScript",
+        "Phaser 3"
+      ],
+      "url": "https://github.com/Dannebicque/marketTycoon",
+      "featured": false
     }
   ]
 }

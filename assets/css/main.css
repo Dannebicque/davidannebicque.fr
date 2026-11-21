@@ -86,7 +86,40 @@
   .btn-ghost {
     @apply border-line text-fg hover:border-fg;
   }
+  .chip {
+    @apply inline-flex min-h-[44px] cursor-pointer items-center rounded-full border border-line bg-bg px-4 text-[0.95rem] font-semibold text-fg transition hover:border-fg;
+  }
+  .chip-label input:checked + .chip {
+    @apply border-surface bg-surface text-on;
+  }
+  .chip-label input:focus-visible + .chip {
+    @apply outline outline-[3px] outline-offset-4 outline-accent;
+  }
+  .field {
+    @apply mt-2 block min-h-[44px] w-full rounded-2xl border border-line bg-panel px-4 py-2.5 text-fg placeholder:text-muted;
+  }
+  .prose-page h2 {
+    @apply mt-12 text-2xl font-bold;
+  }
+  .prose-page p, .prose-page ul {
+    @apply mt-4 text-muted;
+  }
+  .prose-page ul {
+    @apply list-disc pl-6;
+  }
+  .prose-page a {
+    @apply link;
+  }
   .tag {
     @apply rounded-md bg-hi px-2.5 py-1 font-mono text-[0.8rem] font-medium text-fg;
   }
+}
+
+@media print {
+  :root, :root[data-theme='dark'] {
+    --c-bg: 255 255 255; --c-panel: 255 255 255; --c-fg: 20 20 20; --c-muted: 70 70 70;
+    --c-line: 210 210 210; --c-accent: 60 40 180; --c-surface: 255 92 56; --c-on: 20 20 20; --c-hi: 255 220 205;
+  }
+  body { font-size: 11pt; }
+  a[href^='http']::after { content: none; }
 }

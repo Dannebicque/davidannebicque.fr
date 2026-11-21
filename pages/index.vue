@@ -53,7 +53,7 @@
 
     <!-- Réalisations -->
     <section>
-      <SectionHeading eyebrow="Réalisations" title="Des projets en production, ouverts à tous">
+      <SectionHeading eyebrow="Réalisations" title="Des outils ouverts, du terrain à la recherche">
         <NuxtLink to="/realisations" class="link whitespace-nowrap">Tous les projets</NuxtLink>
       </SectionHeading>
       <div class="mt-8 border-t border-line">

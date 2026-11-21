@@ -1,8 +1,16 @@
 <template>
-  <div class="space-y-20 sm:space-y-28">
+  <div class="space-y-20 sm:space-y-28 print:space-y-8">
     <PageHero eyebrow="Curriculum vitae" title="Parcours académique, responsabilités et expertise web.">
       Un parcours construit entre enseignement supérieur, pilotage pédagogique, recherche sur les traces d'apprentissage
       et développement d'applications web.
+      <template #extra>
+        <p class="print:hidden">
+          <a href="/david-annebicque-cv.pdf" download class="btn btn-ghost">
+            <ArrowDownTrayIcon class="h-5 w-5" aria-hidden="true" />
+            Télécharger le CV (PDF)
+          </a>
+        </p>
+      </template>
     </PageHero>
 
     <section aria-labelledby="exp-title">
@@ -71,6 +79,7 @@
 </template>
 
 <script setup lang="ts">
+import { ArrowDownTrayIcon } from '@heroicons/vue/24/outline'
 import competences from '~/data/cv/competences.json'
 import experiences from '~/data/cv/experience.json'
 import formations from '~/data/cv/formation.json'

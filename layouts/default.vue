@@ -10,6 +10,6 @@
     <main id="main" tabindex="-1" class="container-page flex-1 py-10 sm:py-14 focus:outline-none">
       <slot />
     </main>
-    <AppFooter />
+    <AppFooter class="print:hidden" />
   </div>
 </template>

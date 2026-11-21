@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/sitemap'],
   site: { url: 'https://davidannebicque.fr', name: 'David Annebicque' },
+  sitemap: { exclude: ['/merci'] },
   nitro: { prerender: { routes: ['/'], crawlLinks: true } },
   tailwindcss: { cssPath: '~/assets/css/main.css' },
   colorMode: {

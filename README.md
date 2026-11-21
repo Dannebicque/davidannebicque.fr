@@ -21,6 +21,16 @@ npm run generate   # build statique dans .output/public
 - `server/api/publications.get.ts` : publications récupérées depuis HAL au build
 - `composables/usePageSeo.ts` : meta, canonical et Open Graph de chaque page
 
+## CV en PDF
+
+`public/david-annebicque-cv.pdf` est généré depuis la page `/cv` (feuille de style d'impression, PDF balisé).
+Après une modification du CV : `npm run generate`, servir `.output/public`, puis `npm run cv:pdf` (nécessite Playwright).
+
+## Formulaire de contact
+
+Le formulaire de `/contact` est géré par Netlify Forms (détecté au build). Activer les notifications e-mail dans
+*Netlify → Forms → Form notifications*.
+
 ## Déploiement (Netlify)
 
 La configuration est dans `netlify.toml` (`npm run generate`, publication de `.output/public`).

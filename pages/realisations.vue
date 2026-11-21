@@ -3,11 +3,21 @@
     <div>
       <PageHero eyebrow="Réalisations" title="Des outils construits pour des usages réels.">
         Applications métiers, plateformes pédagogiques et briques techniques. Elles partagent une même intention : rendre
-        des processus complexes plus fiables, lisibles et agréables à utiliser. Tous les projets sont open source.
+        des processus complexes plus fiables, lisibles et agréables à utiliser. Tous les projets sont open source, du bundle Symfony à l'éditeur GRAFCET.
       </PageHero>
       <h2 class="sr-only">Liste des projets</h2>
+      <fieldset class="mb-8">
+        <legend class="eyebrow">Filtrer par type</legend>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <label v-for="k in kinds" :key="k.value" class="chip-label">
+            <input v-model="kind" type="radio" name="kind" :value="k.value" class="peer sr-only" />
+            <span class="chip">{{ k.label }}<span class="ml-2 font-mono text-xs">{{ k.count }}</span></span>
+          </label>
+        </div>
+      </fieldset>
+      <p class="sr-only" role="status">{{ shown.length }} projet{{ shown.length > 1 ? 's' : '' }} affiché{{ shown.length > 1 ? 's' : '' }}</p>
       <div class="border-t border-line">
-        <ProjectItem v-for="p in projects" :key="p.title" :project="p" />
+        <ProjectItem v-for="p in shown" :key="p.title" :project="p" />
       </div>
       <p class="mt-6 text-muted">
         Plus de code sur <ExtLink class="link" :href="site.github">mon GitHub</ExtLink>.
@@ -36,8 +46,20 @@
 import { ClipboardDocumentCheckIcon, PresentationChartLineIcon, WrenchScrewdriverIcon } from '@heroicons/vue/24/outline'
 import projectsData from '~/data/projects.json'
 import { site } from '~/data/site'
+import type { Project } from '~/components/ProjectItem.vue'
 
-const projects = projectsData.projects
+const projects: Project[] = projectsData.projects
+
+const kind = ref('all')
+const kinds = [
+  { value: 'all', label: 'Tous', count: projects.length },
+  ...[...new Set(projects.map((p) => p.kind))].map((k) => ({
+    value: k,
+    label: k,
+    count: projects.filter((p) => p.kind === k).length
+  }))
+]
+const shown = computed(() => (kind.value === 'all' ? projects : projects.filter((p) => p.kind === kind.value)))
 
 const approach = [
   {

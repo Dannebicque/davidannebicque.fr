@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
     <div>
       <p v-if="eyebrow" class="eyebrow">{{ eyebrow }}</p>
-      <component :is="level" :id="id" class="mt-2 text-3xl font-bold sm:text-4xl">{{ title }}</component>
+      <component :is="level" :id="id" class="mt-2 text-3xl font-bold sm:text-4xl print:text-2xl">{{ title }}</component>
     </div>
     <slot />
   </div>
