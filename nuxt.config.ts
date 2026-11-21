@@ -2,14 +2,20 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
+  tailwindcss: { cssPath: '~/assets/css/main.css' },
+  colorMode: {
+    preference: 'system',
+    fallback: 'light',
+    dataValue: 'theme',
+    classSuffix: '',
+    storageKey: 'theme'
+  },
   app: {
     head: {
       title: 'David Annebicque',
       titleTemplate: '%s · David Annebicque',
-      htmlAttrs: {
-        lang: 'fr'
-      },
+      htmlAttrs: { lang: 'fr' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,7 +25,8 @@ export default defineNuxtConfig({
         },
         { name: 'robots', content: 'index, follow' },
         { name: 'author', content: 'David Annebicque' },
-        { name: 'theme-color', content: '#172554' },
+        { name: 'theme-color', content: '#FAF9FD', media: '(prefers-color-scheme: light)' },
+        { name: 'theme-color', content: '#0F0D18', media: '(prefers-color-scheme: dark)' },
         { property: 'og:site_name', content: 'David Annebicque' },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'fr_FR' },
@@ -27,13 +34,8 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:image', content: 'https://avatars.githubusercontent.com/u/9027047?v=4' }
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://davidannebicque.fr/' }
-      ]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }
   },
-  typescript: {
-    strict: true
-  }
+  typescript: { strict: true }
 })

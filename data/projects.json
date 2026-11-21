@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "title": "INTRANET",
+      "category": "Gestion pédagogique",
+      "description": "Suivi pédagogique des départements d'IUT : étudiants, notes, absences et accompagnement. Centralise les données et simplifie le quotidien des équipes.",
+      "stack": ["Symfony", "Vue.js", "API"],
+      "url": "https://github.com/Dannebicque/intranetV3",
+      "featured": true
+    },
+    {
+      "title": "ORéOF",
+      "category": "Offres de formation",
+      "description": "Création, validation et publication des offres de formation de l'enseignement supérieur, avec traçabilité des étapes.",
+      "stack": ["Workflow", "Données", "Interface admin"],
+      "url": "https://github.com/OReOF-URCA/oreof",
+      "featured": true
+    },
+    {
+      "title": "WWC · World Wide Company",
+      "category": "Jeu sérieux",
+      "description": "Jeu de gestion d'entreprise en ligne : les étudiants prennent des décisions économiques, marketing et opérationnelles.",
+      "stack": ["Simulation", "Pédagogie", "Données"],
+      "url": "https://github.com/Dannebicque/wwc",
+      "featured": true
+    },
+    {
+      "title": "redigeTonBut",
+      "category": "Collaboration pédagogique",
+      "description": "Plateforme collaborative pour accompagner la rédaction des programmes nationaux du BUT.",
+      "stack": ["Collaboration", "BUT", "Web app"],
+      "url": "https://github.com/Dannebicque/redigeTonBut"
+    },
+    {
+      "title": "HtmlToSpreadsheet",
+      "category": "Bundle Symfony",
+      "description": "Conversion de vues HTML/Twig en feuilles de calcul, pour produire des exports de données structurées rapidement.",
+      "stack": ["Symfony", "Twig", "Excel"],
+      "url": "https://github.com/Dannebicque/htmlToSpreadsheet"
+    },
+    {
+      "title": "UniEdt",
+      "category": "Planification",
+      "description": "Gestion des emplois du temps d'un établissement : contraintes, services et organisation prévisionnelle.",
+      "stack": ["Planification", "Contraintes", "Web app"],
+      "url": "https://github.com/Dannebicque/uniEdt"
+    }
+  ]
+}

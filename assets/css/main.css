@@ -1,0 +1,92 @@
+@import '@fontsource-variable/bricolage-grotesque/wdth.css';
+@import '@fontsource-variable/instrument-sans/index.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Tokens de design : canaux RGB pour permettre l'opacité Tailwind (bg-surface/20).
+ * Corail = action, violet = structure et liens. Contrastes AA vérifiés (texte >= 4.5:1).
+ */
+:root {
+  --c-bg: 250 249 253;
+  --c-panel: 255 255 255;
+  --c-fg: 26 21 53;
+  --c-muted: 90 86 117;
+  --c-line: 227 223 240;
+  --c-accent: 86 54 232;
+  --c-surface: 255 92 56;
+  --c-on: 26 21 53;
+  --c-hi: 255 210 196;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --c-bg: 15 13 24;
+  --c-panel: 23 20 42;
+  --c-fg: 238 235 248;
+  --c-muted: 166 161 192;
+  --c-line: 41 37 59;
+  --c-accent: 177 163 255;
+  --c-surface: 255 106 69;
+  --c-on: 23 16 31;
+  --c-hi: 74 34 22;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg font-sans text-[1.0625rem] leading-relaxed text-fg antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+  :focus-visible {
+    @apply outline outline-[3px] outline-offset-4 outline-accent;
+  }
+  ::selection {
+    @apply bg-surface text-on;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.12em] text-muted;
+  }
+  .hl {
+    background: linear-gradient(transparent 58%, rgb(var(--c-hi)) 58%);
+    @apply px-[0.06em];
+  }
+  .link {
+    @apply font-semibold text-accent underline decoration-2 underline-offset-4 hover:decoration-surface;
+  }
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border-2 px-5 py-2.5 text-[0.95rem] font-semibold transition motion-safe:duration-200;
+  }
+  .btn-primary {
+    @apply border-surface bg-surface text-on hover:brightness-95 motion-safe:hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply border-line text-fg hover:border-fg;
+  }
+  .tag {
+    @apply rounded-md bg-hi px-2.5 py-1 font-mono text-[0.8rem] font-medium text-fg;
+  }
+}
