@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-20 sm:space-y-28 print:space-y-8">
     <PageHero eyebrow="Curriculum vitae" title="Parcours académique, responsabilités et expertise web.">
-      Un parcours construit entre enseignement supérieur, pilotage pédagogique, recherche sur les traces d'apprentissage
+      Un parcours construit entre enseignement supérieur, pilotage pédagogique, recherche en automatique et industrie 4.0
       et développement d'applications web.
       <template #extra>
         <p class="print:hidden">
@@ -37,7 +37,7 @@
 
     <section aria-labelledby="comp-title">
       <SectionHeading id="comp-title" eyebrow="Compétences" title="Domaines d'expertise" />
-      <div class="mt-10 grid gap-10 md:grid-cols-3">
+      <div class="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <article v-for="cat in competences.categories" :key="cat.nom">
           <h3 class="text-xl font-bold">{{ cat.nom }}</h3>
           <ul class="mt-4 flex flex-wrap gap-2">

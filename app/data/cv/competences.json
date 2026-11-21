@@ -1,6 +1,18 @@
 {
   "categories": [
     {
+      "nom": "Recherche",
+      "competences": [
+        "Automatique et informatique industrielle",
+        "Industrie 4.0 et jumeaux numériques",
+        "Vérification formelle",
+        "GRAFCET",
+        "Aide à la décision",
+        "Analyse de données",
+        "Learning analytics"
+      ]
+    },
+    {
       "nom": "Développement",
       "competences": [
         "PHP / Symfony",
