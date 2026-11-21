@@ -1,15 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { createRequire } from 'node:module'
 import tailwindcss from '@tailwindcss/vite'
+
+// @nuxt/eslint est une devDependency : absente d'une installation de production (hébergeur), donc chargée seulement si présente.
+const hasEslint = (() => {
+  try {
+    createRequire(import.meta.url).resolve('@nuxt/eslint')
+    return true
+  } catch {
+    return false
+  }
+})()
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxt/eslint'],
+  modules: ['@nuxtjs/color-mode', '@nuxtjs/sitemap', ...(hasEslint ? ['@nuxt/eslint'] : [])],
   css: ['~/assets/css/main.css'],
   vite: { plugins: [tailwindcss()] },
   site: { url: 'https://davidannebicque.fr', name: 'David Annebicque' },
   sitemap: { exclude: ['/merci'] },
-  nitro: { prerender: { routes: ['/'], crawlLinks: true } },
+  // Site 100 % statique : preset fixé pour que Netlify ne choisisse pas son preset serveur (fonctions)
+  nitro: { preset: 'static', prerender: { routes: ['/'], crawlLinks: true } },
   colorMode: {
     preference: 'system',
     fallback: 'light',

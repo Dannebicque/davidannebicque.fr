@@ -1,7 +1,6 @@
 [build]
   command = "npm run generate"
-  # Sur Netlify, Nuxt écrit dans dist/ (preset netlify) ; en local et en CI GitHub : .output/public
-  publish = "dist"
+  publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "22"
