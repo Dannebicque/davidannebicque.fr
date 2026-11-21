@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      nuxt:
+        patterns: ['nuxt', '@nuxt/*', '@nuxtjs/*']
+      tailwind:
+        patterns: ['tailwindcss', '@tailwindcss/*']
+      tests:
+        patterns: ['@playwright/*', '@axe-core/*', 'eslint*', 'typescript', 'vue-tsc']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

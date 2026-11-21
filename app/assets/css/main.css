@@ -1,0 +1,170 @@
+@import '@fontsource-variable/bricolage-grotesque/wdth.css';
+@import '@fontsource-variable/instrument-sans/index.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';
+@import 'tailwindcss';
+
+/* Le thème sombre est piloté par l'attribut data-theme (module color-mode) */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* Les utilitaires lisent les variables ci-dessous : une seule définition par thème. */
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-panel: var(--c-panel);
+  --color-fg: var(--c-fg);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-accent: var(--c-accent); /* liens et texte coloré (violet) */
+  --color-surface: var(--c-surface); /* fonds d'action (corail) */
+  --color-on: var(--c-on); /* texte posé sur surface */
+  --color-hi: var(--c-hi); /* surligneur */
+
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --container-page: 72rem;
+  --container-prose: 62ch;
+}
+
+/*
+ * Tokens de design. Corail = action, violet = structure et liens.
+ * Contrastes AA vérifiés (texte >= 4.5:1) dans les deux thèmes.
+ */
+:root {
+  --c-bg: #faf9fd;
+  --c-panel: #ffffff;
+  --c-fg: #1a1535;
+  --c-muted: #5a5675;
+  --c-line: #e3dff0;
+  --c-accent: #5636e8;
+  --c-surface: #ff5c38;
+  --c-on: #1a1535;
+  --c-hi: #ffd2c4;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --c-bg: #0f0d18;
+  --c-panel: #17142a;
+  --c-fg: #eeebf8;
+  --c-muted: #a6a1c0;
+  --c-line: #29253b;
+  --c-accent: #b1a3ff;
+  --c-surface: #ff6a45;
+  --c-on: #17101f;
+  --c-hi: #4a2216;
+  color-scheme: dark;
+}
+
+/* Lien de contenu : utilitaire, donc utilisable en classe et avec @apply */
+@utility link {
+  @apply font-semibold text-accent underline decoration-2 underline-offset-4 hover:decoration-surface;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg font-sans text-[1.0625rem] leading-relaxed text-fg antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+  :focus-visible {
+    @apply outline-[3px] outline-offset-4 outline-accent;
+  }
+  ::selection {
+    @apply bg-surface text-on;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.12em] text-muted;
+  }
+  .hl {
+    background: linear-gradient(transparent 58%, var(--c-hi) 58%);
+    @apply px-[0.06em];
+  }
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border-2 px-5 py-2.5 text-[0.95rem] font-semibold transition motion-safe:duration-200;
+  }
+  .btn-primary {
+    @apply border-surface bg-surface text-on hover:brightness-95 motion-safe:hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply border-line text-fg hover:border-fg;
+  }
+  .chip {
+    @apply inline-flex min-h-[44px] cursor-pointer items-center rounded-full border border-line bg-bg px-4 text-[0.95rem] font-semibold text-fg transition hover:border-fg;
+  }
+  .chip-label input:checked + .chip {
+    @apply border-surface bg-surface text-on;
+  }
+  .chip-label input:focus-visible + .chip {
+    @apply outline-[3px] outline-offset-4 outline-accent;
+  }
+  .field {
+    @apply mt-2 block min-h-[44px] w-full rounded-2xl border border-line bg-panel px-4 py-2.5 text-fg placeholder:text-muted;
+  }
+  .nav-link[aria-current='page'] {
+    @apply bg-hi text-fg;
+  }
+  .nav-link-mobile[aria-current='page'] {
+    @apply text-accent;
+  }
+  .prose-page h2 {
+    @apply mt-12 text-2xl font-bold;
+  }
+  .prose-page p,
+  .prose-page ul {
+    @apply mt-4 text-muted;
+  }
+  .prose-page ul {
+    @apply list-disc pl-6;
+  }
+  .prose-page a {
+    @apply link;
+  }
+  .tag {
+    @apply rounded-md bg-hi px-2.5 py-1 font-mono text-[0.8rem] font-medium text-fg;
+  }
+}
+
+@media print {
+  :root,
+  :root[data-theme='dark'] {
+    --c-bg: #ffffff;
+    --c-panel: #ffffff;
+    --c-fg: #141414;
+    --c-muted: #464646;
+    --c-line: #d2d2d2;
+    --c-accent: #3c28b4;
+    --c-surface: #ff5c38;
+    --c-on: #141414;
+    --c-hi: #ffdccd;
+  }
+  body {
+    font-size: 11pt;
+  }
+}
