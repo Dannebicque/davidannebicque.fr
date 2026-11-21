@@ -1,8 +1,9 @@
 <template>
   <div class="space-y-16">
     <PageHero eyebrow="Publications" title="Travaux de recherche et productions scientifiques.">
-      Mes travaux portent sur les learning analytics, les environnements numériques d'apprentissage et l'analyse des
-      usages dans l'enseignement supérieur. Les références viennent de l'archive ouverte HAL.
+      Mes travaux portent sur l'automatique et l'industrie 4.0, la vérification formelle, les données et l'aide à la
+      décision, ainsi que sur les learning analytics et les environnements d'apprentissage. Les références viennent de
+      l'archive ouverte HAL.
     </PageHero>
 
     <section aria-labelledby="biblio-title">
@@ -71,7 +72,7 @@ const byYear = computed(() => {
 
 usePageSeo({
   title: 'Publications',
-  description: "Publications scientifiques de David Annebicque : learning analytics, environnements numériques d'apprentissage et analyse des usages.",
+  description: "Publications scientifiques de David Annebicque : automatique, industrie 4.0, vérification formelle, aide à la décision et learning analytics.",
   path: '/publications'
 })
 </script>
