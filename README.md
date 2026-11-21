@@ -1,42 +1,32 @@
-# Nuxt 3 Minimal Starter
+# davidannebicque.fr
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Site personnel de David Annebicque : vitrine, réalisations, enseignements, publications et contact.
 
-## Setup
+**Stack** : Nuxt 3 (statique), Tailwind CSS, headless UI, polices auto-hébergées (Fontsource), hébergé sur Netlify.
 
-Make sure to install the dependencies:
+## Développement
 
 ```bash
-# yarn
-yarn install
-
-# npm
 npm install
-
-# pnpm
-pnpm install
+npm run dev        # http://localhost:3000
+npm run generate   # build statique dans .output/public
 ```
 
-## Development Server
+## Structure
 
-Start the development server on http://localhost:3000
+- `data/site.ts` : nom, e-mail, liens, navigation
+- `data/projects.json` : projets (ceux marqués `featured` apparaissent sur l'accueil)
+- `data/cv/`, `data/enseignements/` : contenu du CV et des cours
+- `assets/css/main.css` : tokens de design (couleurs clair/sombre) et composants utilitaires
+- `server/api/publications.get.ts` : publications récupérées depuis HAL au build
+- `composables/usePageSeo.ts` : meta, canonical et Open Graph de chaque page
 
-```bash
-npm run dev
-```
+## Déploiement (Netlify)
 
-## Production
+La configuration est dans `netlify.toml` (`npm run generate`, publication de `.output/public`).
+Les publications HAL sont figées au moment du build : relancer un déploiement les met à jour.
 
-Build the application for production:
+## Accessibilité
 
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Lien d'évitement, navigation clavier, focus visible, contrastes WCAG AA dans les deux thèmes,
+`prefers-reduced-motion` respecté.

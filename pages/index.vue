@@ -23,13 +23,13 @@
         </div>
       </div>
 
-      <div class="relative mx-auto w-64 sm:w-72 lg:w-full lg:max-w-sm">
+      <div class="relative mx-auto w-64 sm:w-72">
         <div class="absolute inset-0 translate-x-3 translate-y-3 rotate-3 rounded-[2rem] bg-surface" aria-hidden="true"></div>
         <img
           :src="site.avatar"
           alt="Portrait de David Annebicque"
-          width="400"
-          height="400"
+          width="295"
+          height="295"
           fetchpriority="high"
           class="relative aspect-square w-full rounded-[2rem] border-2 border-fg object-cover"
         />
@@ -61,29 +61,14 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section
-      id="contact"
-      aria-labelledby="contact-title"
-      class="flex flex-col gap-8 rounded-[2rem] bg-surface p-8 text-on sm:p-12 lg:flex-row lg:items-center lg:justify-between"
-    >
-      <div class="max-w-xl space-y-3">
-        <h2 id="contact-title" class="text-3xl font-extrabold sm:text-5xl">Un projet, une question, une mission ?</h2>
-        <p class="text-lg">
-          Outil métier, audit d'accessibilité, modernisation d'une application Symfony ou Vue : parlons-en.
-        </p>
-      </div>
-      <ExtLink :href="contactHref" class="inline-flex min-h-[44px] items-center justify-center rounded-full bg-on px-6 py-3 font-bold text-surface hover:opacity-90">
-        {{ site.email ? 'Écrire un e-mail' : 'Me joindre sur LinkedIn' }}
-      </ExtLink>
-    </section>
+    <ContactBand />
   </div>
 </template>
 
 <script setup lang="ts">
 import { AcademicCapIcon, ArrowRightIcon, ChartBarSquareIcon, CodeBracketSquareIcon } from '@heroicons/vue/24/outline'
 import projectsData from '~/data/projects.json'
-import { contactHref, site } from '~/data/site'
+import { site } from '~/data/site'
 
 const tags = ['Symfony', 'Vue.js', 'Accessibilité', 'Open source', 'Learning analytics']
 
@@ -107,14 +92,28 @@ const focusAreas = [
   }
 ]
 
-useSeoMeta({
+usePageSeo({
   title: 'Accueil',
   description: "David Annebicque, enseignant-chercheur à l'IUT de Troyes et développeur web Symfony, Vue et Nuxt. Réalisations, enseignements, publications et contact.",
-  ogTitle: 'David Annebicque · Enseignant-chercheur et développeur web',
-  ogDescription: "Applications web, pédagogie, accessibilité et learning analytics pour l'enseignement supérieur.",
-  ogUrl: `${site.url}/`,
-  twitterTitle: 'David Annebicque · Enseignant-chercheur et développeur web',
-  twitterDescription: "Réalisations, enseignements et publications autour de Symfony, Vue, Nuxt et de l'innovation pédagogique."
+  path: '/'
 })
-useHead({ link: [{ rel: 'canonical', href: `${site.url}/` }] })
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: site.name,
+        url: site.url,
+        image: `${site.url}/images/portrait.png`,
+        jobTitle: 'Maître de conférences',
+        worksFor: { '@type': 'CollegeOrUniversity', name: 'IUT de Troyes, Université de Reims Champagne-Ardenne' },
+        knowsAbout: ['Symfony', 'Vue.js', 'Accessibilité numérique', 'Learning analytics'],
+        sameAs: [site.github, site.linkedin]
+      })
+    }
+  ]
+})
 </script>

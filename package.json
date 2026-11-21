@@ -19,6 +19,7 @@
     "nuxt": "^3.13.2"
   },
   "devDependencies": {
-    "@nuxtjs/color-mode": "^4.1.0"
+    "@nuxtjs/color-mode": "^4.1.0",
+    "@nuxtjs/sitemap": "^7.6.2"
   }
 }

@@ -2,7 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/sitemap'],
+  site: { url: 'https://davidannebicque.fr', name: 'David Annebicque' },
+  nitro: { prerender: { routes: ['/'], crawlLinks: true } },
   tailwindcss: { cssPath: '~/assets/css/main.css' },
   colorMode: {
     preference: 'system',
@@ -30,9 +32,9 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'David Annebicque' },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'fr_FR' },
-        { property: 'og:image', content: 'https://avatars.githubusercontent.com/u/9027047?v=4' },
-        { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:image', content: 'https://avatars.githubusercontent.com/u/9027047?v=4' }
+        { property: 'og:image', content: 'https://davidannebicque.fr/og.png' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:image', content: 'https://davidannebicque.fr/og.png' }
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }
