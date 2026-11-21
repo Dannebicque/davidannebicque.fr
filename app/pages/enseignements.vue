@@ -52,7 +52,7 @@
         </div>
         <div class="flex items-center gap-4">
           <p class="text-muted" role="status">{{ filteredCourses.length }} cours affiché{{ filteredCourses.length > 1 ? 's' : '' }}</p>
-          <button v-if="hasActiveFilters" type="button" class="btn btn-ghost !min-h-[40px] !py-1.5" @click="clearFilters">
+          <button v-if="hasActiveFilters" type="button" class="btn btn-ghost min-h-[40px]! py-1.5!" @click="clearFilters">
             Réinitialiser
           </button>
         </div>

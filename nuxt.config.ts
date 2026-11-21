@@ -1,12 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxt/eslint'],
+  modules: ['@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxt/eslint'],
+  css: ['~/assets/css/main.css'],
+  vite: { plugins: [tailwindcss()] },
   site: { url: 'https://davidannebicque.fr', name: 'David Annebicque' },
   sitemap: { exclude: ['/merci'] },
   nitro: { prerender: { routes: ['/'], crawlLinks: true } },
-  tailwindcss: { cssPath: '~/assets/css/main.css' },
   colorMode: {
     preference: 'system',
     fallback: 'light',

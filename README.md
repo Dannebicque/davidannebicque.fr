@@ -2,7 +2,7 @@
 
 Site personnel de David Annebicque : vitrine, réalisations, enseignements, publications et contact.
 
-**Stack** : Nuxt 3 (statique), Tailwind CSS, headless UI, polices auto-hébergées (Fontsource), hébergé sur Netlify.
+**Stack** : Nuxt 4 (statique), Tailwind CSS 4, Headless UI, polices auto-hébergées (Fontsource), hébergé sur Netlify.
 
 ## Développement
 
@@ -14,12 +14,12 @@ npm run generate   # build statique dans .output/public
 
 ## Structure
 
-- `data/site.ts` : nom, e-mail, liens, navigation
-- `data/projects.json` : projets (ceux marqués `featured` apparaissent sur l'accueil)
-- `data/cv/`, `data/enseignements/` : contenu du CV et des cours
-- `assets/css/main.css` : tokens de design (couleurs clair/sombre) et composants utilitaires
+- `app/data/site.ts` : nom, e-mail, liens, navigation
+- `app/data/projects.json` : projets (ceux marqués `featured` apparaissent sur l'accueil)
+- `app/data/cv/`, `app/data/enseignements/` : contenu du CV et des cours
+- `app/assets/css/main.css` : configuration Tailwind 4 (`@theme`), tokens de design (couleurs clair/sombre) et composants
 - `server/api/publications.get.ts` : publications récupérées depuis HAL au build
-- `composables/usePageSeo.ts` : meta, canonical et Open Graph de chaque page
+- `app/composables/usePageSeo.ts` : meta, canonical et Open Graph de chaque page
 
 ## CV en PDF
 
@@ -48,7 +48,7 @@ npm run lighthouse    # Lighthouse CI : perf >= 90, a11y 100, bonnes pratiques >
 
 La CI GitHub Actions (`.github/workflows/ci.yml`) enchaîne ces étapes. Playwright demande
 `npx playwright install chromium` en local (ou `PW_CHROMIUM_PATH` vers un Chromium existant).
-Dependabot propose les mises à jour chaque semaine ; Nuxt 4 est exclu, la migration se fait à part.
+Dependabot propose les mises à jour chaque semaine.
 Tests manuels au lecteur d'écran : [docs/tests-lecteur-ecran.md](docs/tests-lecteur-ecran.md).
 
 ## Accessibilité

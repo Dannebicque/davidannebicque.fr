@@ -20,7 +20,7 @@
       </nav>
 
       <div class="flex items-center gap-2">
-        <NuxtLink to="/contact" class="btn btn-primary hidden !min-h-[44px] !py-1.5 lg:inline-flex">Contact</NuxtLink>
+        <NuxtLink to="/contact" class="btn btn-primary hidden min-h-[44px]! py-1.5! lg:inline-flex">Contact</NuxtLink>
         <ThemeToggle />
         <button
           type="button"
@@ -75,12 +75,3 @@ const open = ref(false)
 const route = useRoute()
 watch(() => route.fullPath, () => { open.value = false })
 </script>
-
-<style scoped>
-.nav-link[aria-current='page'] {
-  @apply bg-hi text-fg;
-}
-.nav-link-mobile[aria-current='page'] {
-  @apply text-accent;
-}
-</style>

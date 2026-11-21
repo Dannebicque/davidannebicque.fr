@@ -8,12 +8,10 @@ updates:
     groups:
       nuxt:
         patterns: ['nuxt', '@nuxt/*', '@nuxtjs/*']
+      tailwind:
+        patterns: ['tailwindcss', '@tailwindcss/*']
       tests:
         patterns: ['@playwright/*', '@axe-core/*', 'eslint*', 'typescript', 'vue-tsc']
-    ignore:
-      # Nuxt 4 : migration à faire à part
-      - dependency-name: nuxt
-        update-types: ['version-update:semver-major']
   - package-ecosystem: github-actions
     directory: /
     schedule:

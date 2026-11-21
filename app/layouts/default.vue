@@ -7,7 +7,7 @@
       Aller au contenu
     </a>
     <AppNav />
-    <main id="main" tabindex="-1" class="container-page flex-1 py-10 sm:py-14 focus:outline-none">
+    <main id="main" tabindex="-1" class="container-page flex-1 py-10 sm:py-14 focus:outline-hidden">
       <slot />
     </main>
     <AppFooter class="print:hidden" />
