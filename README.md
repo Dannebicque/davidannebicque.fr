@@ -36,6 +36,21 @@ Le formulaire de `/contact` est géré par Netlify Forms (détecté au build). A
 La configuration est dans `netlify.toml` (`npm run generate`, publication de `.output/public`).
 Les publications HAL sont figées au moment du build : relancer un déploiement les met à jour.
 
+## Qualité
+
+```bash
+npm run lint          # ESLint (@nuxt/eslint)
+npm run typecheck     # vue-tsc
+npm run generate      # build statique
+npm test              # Playwright : axe WCAG 2.2 AA (clair + sombre), clavier, SEO, formulaire Netlify
+npm run lighthouse    # Lighthouse CI : perf >= 90, a11y 100, bonnes pratiques >= 90, SEO >= 95
+```
+
+La CI GitHub Actions (`.github/workflows/ci.yml`) enchaîne ces étapes. Playwright demande
+`npx playwright install chromium` en local (ou `PW_CHROMIUM_PATH` vers un Chromium existant).
+Dependabot propose les mises à jour chaque semaine ; Nuxt 4 est exclu, la migration se fait à part.
+Tests manuels au lecteur d'écran : [docs/tests-lecteur-ecran.md](docs/tests-lecteur-ecran.md).
+
 ## Accessibilité
 
 Lien d'évitement, navigation clavier, focus visible, contrastes WCAG AA dans les deux thèmes,

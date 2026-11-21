@@ -9,6 +9,22 @@ export interface Publication {
   docType: string
 }
 
+export interface HalDoc {
+  docid: string | number
+  title_s?: string[]
+  authFullName_s?: string[]
+  journalTitle_s?: string[]
+  conferenceTitle_s?: string[]
+  bookTitle_s?: string[]
+  publicationDate_s?: string
+  uri_s?: string
+  docType_s?: string
+}
+
+export interface HalResponse {
+  response?: { docs?: HalDoc[] }
+}
+
 const TYPES: Record<string, string> = {
   ART: 'Article',
   COMM: 'Communication',
@@ -22,7 +38,7 @@ const TYPES: Record<string, string> = {
   OTHER: 'Autre'
 }
 
-const venueOf = (d: any): string => {
+const venueOf = (d: HalDoc): string => {
   switch (d.docType_s) {
     case 'ART': return d.journalTitle_s?.[0] || ''
     case 'COMM':
@@ -35,8 +51,8 @@ const venueOf = (d: any): string => {
   }
 }
 
-export const normalizeHal = (docs: any[]): Publication[] =>
-  docs.map((d) => ({
+export const normalizeHal = (docs: HalDoc[]): Publication[] =>
+  docs.map((d): Publication => ({
     docid: String(d.docid),
     title: d.title_s?.[0] || 'Sans titre',
     authors: d.authFullName_s || [],

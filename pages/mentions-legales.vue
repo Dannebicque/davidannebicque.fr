@@ -6,7 +6,7 @@
       <p>
         {{ site.name }}, personne physique, maître de conférences à l'IUT de Troyes (Université de Reims Champagne-Ardenne).
         Directeur de la publication : {{ site.name }}.<br />
-        Contact : <a :href="`mailto:${site.email}`">{{ site.email }}</a>
+        Contact : <a :href="mailto">{{ email }}</a>
       </p>
       <p>
         Les opinions exprimées sur ce site sont personnelles et n'engagent pas l'Université de Reims Champagne-Ardenne.
@@ -22,7 +22,7 @@
       <p>
         Les textes et visuels de ce site sont la propriété de leur auteur, sauf mention contraire. Les projets présentés
         sont publiés sous les licences indiquées dans leurs dépôts GitHub. Le code du site est disponible sur
-        <ExtLink :href="`${site.github}/davidannebicque.fr`">GitHub</ExtLink>.
+        <ExtLink :href="repoUrl">GitHub</ExtLink>.
       </p>
 
       <h2 id="donnees">Données personnelles</h2>
@@ -34,7 +34,7 @@
       </p>
       <p>
         Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à
-        <a :href="`mailto:${site.email}`">{{ site.email }}</a>. En cas de difficulté, vous pouvez saisir la
+        <a :href="mailto">{{ email }}</a>. En cas de difficulté, vous pouvez saisir la
         <ExtLink href="https://www.cnil.fr/fr/plaintes">CNIL</ExtLink>.
       </p>
 
@@ -56,6 +56,10 @@
 
 <script setup lang="ts">
 import { site } from '~/data/site'
+
+const repoUrl = `${site.github}/davidannebicque.fr`
+const email = site.email
+const mailto = `mailto:${site.email}`
 
 usePageSeo({
   title: 'Mentions légales',

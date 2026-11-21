@@ -9,5 +9,9 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{ title: string; eyebrow?: string; level?: 'h1' | 'h2' | 'h3'; id?: string }>(), { level: 'h2' })
+withDefaults(defineProps<{ title: string; eyebrow?: string; level?: 'h1' | 'h2' | 'h3'; id?: string }>(), {
+  level: 'h2',
+  eyebrow: undefined,
+  id: undefined
+})
 </script>

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/sitemap', '@nuxt/eslint'],
   site: { url: 'https://davidannebicque.fr', name: 'David Annebicque' },
   sitemap: { exclude: ['/merci'] },
   nitro: { prerender: { routes: ['/'], crawlLinks: true } },

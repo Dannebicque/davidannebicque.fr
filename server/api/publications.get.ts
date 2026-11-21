@@ -1,4 +1,4 @@
-import { normalizeHal, type Publication } from '../utils/hal'
+import { normalizeHal, type HalResponse, type Publication } from '../utils/hal'
 
 const HAL = 'https://api.archives-ouvertes.fr/search/'
 
@@ -6,7 +6,7 @@ const HAL = 'https://api.archives-ouvertes.fr/search/'
 export default defineCachedEventHandler(
   async (): Promise<Publication[]> => {
     try {
-      const data: any = await $fetch(HAL, {
+      const data = await $fetch<HalResponse>(HAL, {
         query: {
           q: 'authIdHal_s:david-annebicque',
           fl: 'docid,title_s,authFullName_s,journalTitle_s,conferenceTitle_s,bookTitle_s,publicationDate_s,uri_s,docType_s',

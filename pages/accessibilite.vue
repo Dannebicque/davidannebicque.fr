@@ -7,7 +7,7 @@
       <h2>État de conformité</h2>
       <p>
         Ce site n'a pas fait l'objet d'un audit RGAA complet par un tiers : son niveau de conformité n'est donc pas
-        déclaré. Il est conçu pour viser le niveau AA des WCAG 2.1.
+        déclaré. Il est conçu pour viser le niveau AA des WCAG 2.2.
       </p>
 
       <h2>Ce qui est en place</h2>
@@ -22,7 +22,7 @@
 
       <h2>Comment ce site est vérifié</h2>
       <p>
-        Contrôles automatisés avec axe-core sur toutes les pages, dans les deux thèmes, et tests au clavier. Ces outils ne
+        Contrôles automatisés avec axe-core sur toutes les pages, dans les deux thèmes, et tests au clavier, relancés à chaque modification du code. Ces outils ne
         détectent qu'une partie des problèmes : un test avec lecteur d'écran et un audit manuel complet restent à faire.
       </p>
 
